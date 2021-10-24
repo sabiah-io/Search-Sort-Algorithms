@@ -1,21 +1,23 @@
-import java.util.*;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class SearchSortAlgorithm {
-    
-    public static void main (String[] arg) {
+
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         // Display program title
         System.out.println();
-        System.out.println("\t\t\t\t\tSearching and Sorting Algorithm Program");
-        System.out.println("\t\tThe program allows you to perform searching or sorting operations on your set of inputs.\n");
-
+        System.out.println("\t\t\t\t\t\t\t\t\t\t\tSearching and Sorting Algorithm Program");
+        System.out.println("\t\t\t\t\t\t\t\t\t\t\t---------------------------------------");
+        System.out.println("\t\t\t\t\tThe program allows you to perform searching or sorting operations on your set of inputs.");
+        System.out.println("\t\t\t\t\t----------------------------------------------------------------------------------------\n");
 
         try {
             // The type of search algorithm user would like to perform
-            System.out.println("Which operation would you like to performing?");
-            System.out.println("1. Search Operation");
-            System.out.println("2. Sort Operation");
+            System.out.println("\t\t\t\t\t\t\t\t\t\tWhich operation would you like to perform?");
+            System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t1. Search Operation");
+            System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t2. Sort Operation\n");
             System.out.print("Reply with 1 or 2: ");
             int type = scanner.nextInt();
 
@@ -28,7 +30,8 @@ public class SearchSortAlgorithm {
                 // Initialize the array size to value received from user
                 int[] array = new int[arraySize];
 
-                // Iterate through the array size with each iteration requesting the user for a value.
+                // Iterate through the array size with each iteration requesting the user for a
+                // value.
                 for (int x = 0; x < arraySize; ++x) {
                     System.out.print("Value for index " + x + ": ");
                     int input = scanner.nextInt();
@@ -43,12 +46,11 @@ public class SearchSortAlgorithm {
                 System.out.println();
 
                 // Type of Search Operation to perform
-                System.out.println("\nWhich search algorithm would you like to use?");
-                System.out.println("1. Linear Search");
-                System.out.println("2. Binary Search");
-                System.out.print("Reply with 1 or 2: ");
+                System.out.println("\n\t\t\t\t\t\t\t\t\t\tWhich search algorithm would you like to use?");
+                System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t1. Linear Search");
+                System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t2. Binary Search");
+                System.out.print("\nReply with 1 or 2: ");
                 int searchType = scanner.nextInt();
-
 
                 if (searchType == 1) {
                     int index = LinearSearch(array, arraySize, searchKey);
@@ -75,7 +77,8 @@ public class SearchSortAlgorithm {
                 // Initialize the array size to value received from user
                 int[] array = new int[arraySize];
 
-                // Iterate through the array size with each iteration requesting the user for a value.
+                // Iterate through the array size with each iteration requesting the user for a
+                // value.
                 for (int x = 0; x < arraySize; ++x) {
                     System.out.print("Value for index " + x + ": ");
                     int input = scanner.nextInt();
@@ -84,13 +87,13 @@ public class SearchSortAlgorithm {
                 }
 
                 // Type of Search Operation to perform
-                System.out.println("\nWhich sort algorithm would you like to use?");
-                System.out.println("1. Quick Sort");
-                System.out.println("2. Selection Sort");
-                System.out.println("3. Insertion Sort");
-                System.out.println("4. Bubble Sort");
-                System.out.println("5. Merge Sort");
-                System.out.print("Reply with 1, 2, 3, 4 or 5: ");
+                System.out.println("\n\t\t\t\t\t\t\t\t\t\tWhich sort algorithm would you like to use?");
+                System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t1. Quick Sort");
+                System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t2. Selection Sort");
+                System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t3. Insertion Sort");
+                System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t4. Bubble Sort");
+                System.out.println("\t\t\t\t\t\t\t\t\t\t\t\t\t5. Merge Sort");
+                System.out.print("\nReply with 1, 2, 3, 4 or 5: ");
                 int sortType = scanner.nextInt();
 
                 if (sortType == 1) {
@@ -114,26 +117,26 @@ public class SearchSortAlgorithm {
                     System.out.println(Arrays.toString(array));
                 }
                 if (sortType == 5) {
-                    MergeSort(array, arraySize);
                     System.out.println("\nSorted Array in Ascending Order using Merge Sort: ");
-                    System.out.println(Arrays.toString(array));
+                    MergeSort(array);
                 }
 
             }
         } catch (Exception InputMismatchException) {
-            System.out.println("\nSorry you entered wrong input. Program ended.");        
+            // return a custom error message
+            System.out.println("\nSorry you entered wrong input. Program ended.");
         }
-        
+
         scanner.close();
     }
 
 
-    // Linear Search 
-    public static int LinearSearch (int array[], int arraySize, int searchKey) {
+    // Linear Search
+    public static int LinearSearch(int array[], int arraySize, int searchKey) {
         // Initializing variables to be used
         int index = 0;
 
-        for (index = 0; index < arraySize; ++index) { 
+        for (index = 0; index < arraySize; ++index) {
             if (searchKey == array[index]) {
                 // Return index of search key
                 return index;
@@ -142,10 +145,9 @@ public class SearchSortAlgorithm {
 
         return -1; // not found
     }
-    
 
-    // Binary Search 
-    public static int BinarySearch (int array[], int arraySize, int searchKey) {
+    // Binary Search
+    public static int BinarySearch(int array[], int arraySize, int searchKey) {
         // Initializing variables to be used
         int mid = 0;
         int left = 0;
@@ -157,20 +159,17 @@ public class SearchSortAlgorithm {
             if (array[mid] < searchKey) {
                 // Increase left side index by 1
                 left = mid + 1;
-            }
-            else if (array[mid] > searchKey) {
+            } else if (array[mid] > searchKey) {
                 // Decrease right side index by 1
                 right = mid - 1;
-            }
-            else {
-                // return the mid value as search key index
+            } else {
+                // return the mid-value as search key index
                 return mid;
             }
         }
 
         return -1; // not found
     }
-
 
     // Insertion Sort
     public static void Insertion(int array[], int arraySize) {
@@ -181,21 +180,22 @@ public class SearchSortAlgorithm {
         for (m = 1; m < arraySize; ++m) {
             n = m;
             while (n > 0 && array[n] < array[n - 1]) {
+                // swapping temp and current value in area in accordance with the condition above
                 temp = array[n];
-                array[n] = array[n -1];
+                array[n] = array[n - 1];
                 array[n - 1] = temp;
                 --n;
             }
         }
     }
 
-
     // Bubble Sort
     public static void BubbleSort(int array[], int arraySize) {
+        // declaring and initializing variables
         int m;
         int n;
         int temp = 0;
-        
+
         // loop to access each array element
         for (m = 0; m < arraySize - 1; m++) {
             // loop to compare array elements
@@ -204,8 +204,7 @@ public class SearchSortAlgorithm {
                 // change > to < to sort in descending order
                 if (array[n] > array[n + 1]) {
 
-                    // swapping occurs if elements
-                    // are not in the intended order
+                    // swapping occurs if elements are not in the intended order
                     temp = array[n];
                     array[n] = array[n + 1];
                     array[n + 1] = temp;
@@ -215,122 +214,114 @@ public class SearchSortAlgorithm {
         }
     }
 
-
     // Selection Sort
-    public static void SelectionSort(int array[], int arraySize) {
+    public static void SelectionSort(int[] array, int arraySize) {
         int step;
         int m;
-    
-        for (step = 0; step < arraySize - 1; step++) {
-          int min_idx = step;
-    
-          for (m = step + 1; m < arraySize; m++) {
-            // Select the minimum element in each loop.
-            if (array[m] < array[min_idx]) {
-              min_idx = m;
-            }
-          }
-    
-          // put min at the correct position
-          int temp = array[step];
-          array[step] = array[min_idx];
-          array[min_idx] = temp;
-        }
-      }
 
-    
+        for (step = 0; step < arraySize - 1; step++) {
+            int min_idx = step;
+
+            for (m = step + 1; m < arraySize; m++) {
+                // Select the minimum element in each loop.
+                if (array[m] < array[min_idx]) {
+                    min_idx = m;
+                }
+            }
+
+            // put min at the correct position
+            int temp = array[step];
+            array[step] = array[min_idx];
+            array[min_idx] = temp;
+        }
+    }
+
     public static void QuickSort(int array[], int low, int high) {
         // choose the rightmost element as main
         int main = array[high];
 
         int m = (low - 1);
-    
+
         // compare each element with main
         for (int n = low; n < high; n++) {
-          if (array[n] <= main) {
-            m++;    
-            // swapping element at i with element at j
-            int temp = array[m];
-            array[m] = array[n];
-            array[n] = temp;
-          }
-    
+            if (array[n] <= main) {
+                m++;
+                // swapping element at i with element at j
+                int temp = array[m];
+                array[m] = array[n];
+                array[n] = temp;
+            }
+
         }
-        // swapt the pivot element with the greater element specified by i
+        // swap the pivot element with the greater element specified by i
         int temp = array[m + 1];
         array[m + 1] = array[high];
         array[high] = temp;
-    
+
         if (low < high) {
-          // recursive call on the left of pivot
-          QuickSort(array, low, m - 1);
-    
-          // recursive call on the right of pivot
-          QuickSort(array, m + 1, high);
+            // recursive call on the left of pivot
+            QuickSort(array, low, m - 1);
+
+            // recursive call on the right of pivot
+            QuickSort(array, m + 1, high);
         }
     }
 
-    
     // Merge Sort
-    public static void MergeSort(int[] array, int arraySize) {
-
-        // Spliting array into two parts
-        if (arraySize % 2 == 0) {
-            // array with even size
-            int mid = arraySize / 2;
-
-            int[] arrayA = new int[mid];
-            int[] arrayB = new int[mid];
-
-            // filling first array
-            for (int i = 0; i < mid; i++) {
-                arrayA[i] = array[i];
-            }
-            
-            // filling second array
-            for (int i = 0; i < mid; i++) {
-                arrayB[i] = array[i + (mid)];
-
-            }
-            
-            // sorting arrays separately 
-            SelectionSort(arrayA, arrayA.length);
-            SelectionSort(arrayB, arrayB.length);
-            
-            // combining arrays 
-            int[] newArray = new int[arrayA.length + arrayB.length];
-            System.arraycopy(arrayA, 0, newArray, 0, arrayA.length);
-            System.arraycopy(arrayB, 0, newArray, arrayA.length, arrayB.length);
-            System.out.println(Arrays.toString(newArray));
-        
-        } else {
-            // array with odd size
-            int mid = arraySize / 2;
-
-            int[] arrayA = new int[arraySize / 2];
-            int[] arrayB = new int[(arraySize / 2) + 1];
-            
-            // filling in first array
-            for (int i = 0; i < mid; i++) {
-                arrayA[i] = array[i];
-            }
-            
-            // filling in second array
-            for (int i = 0; i < mid + 1; i++) {
-                arrayB[i] = array[i + (mid)];
-
-            }
-            
-            // sorting arrays separately
-            SelectionSort(arrayA, arrayA.length);
-            SelectionSort(arrayB, arrayB.length);
-
-            // combining arrays 
-            int[] newArray = new int[arrayA.length + arrayB.length];
-            System.arraycopy(arrayA, 0, newArray, 0, arrayA.length);
-            System.arraycopy(arrayB, 0, newArray, arrayA.length, arrayB.length);
-            System.out.println(Arrays.toString(newArray));
+    public static void MergeSort(int[] array) {
+        int arrayLength = array.length;
+        if (arrayLength < 2) {
+            return;
         }
+
+        int midIndex = arrayLength / 2;
+        int[] leftSide = new int[midIndex];
+        int[] rightSide = new int[arrayLength - midIndex];
+
+        // filling in arrays
+        for (int i = 0; i < midIndex; i++) {
+            leftSide[i] = array[i];
+        }
+
+        for (int i = midIndex; i < array.length; i++) {
+            rightSide[i - midIndex] = array[i];
+        }
+
+        // recursive part
+        MergeSort(leftSide);
+        MergeSort(rightSide);
+
+        int rightArrayLength = rightSide.length;
+        int leftArrayLength = leftSide.length;
+        // merging
+        int i = 0;
+        int j = 0;
+        int k = 0;
+        while (i < leftArrayLength && j < rightArrayLength) {
+            if (leftSide[i] < rightSide[j]) {
+                array[k] = leftSide[i];
+                i++;
+            } else {
+                array[k] = rightSide[j];
+                j++;
+            }
+            k++;
+        }
+
+        // adding remaining element
+        while (i < leftArrayLength) {
+            array[k] = leftSide[i];
+
+            i++;
+            k++;
+        }
+        while (j < rightArrayLength) {
+            array[k] = rightSide[j];
+
+            j++;
+            k++;
+        }
+        System.out.println(Arrays.toString(array));
 
     }
 }
