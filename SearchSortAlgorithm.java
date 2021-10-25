@@ -80,7 +80,7 @@ public class SearchSortAlgorithm {
                 // Iterate through the array size with each iteration requesting the user for a
                 // value.
                 for (int x = 0; x < arraySize; ++x) {
-                    System.out.print("Value for position " + x + ": ");
+                    System.out.print("Enter value: ");
                     int input = scanner.nextInt();
                     // Adding the value to array index x
                     array[x] = input;
