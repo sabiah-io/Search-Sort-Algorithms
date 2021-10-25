@@ -80,7 +80,7 @@ public class SearchSortAlgorithm {
                 // Iterate through the array size with each iteration requesting the user for a
                 // value.
                 for (int x = 0; x < arraySize; ++x) {
-                    System.out.print("Value for index " + x + ": ");
+                    System.out.print("Value for position " + x + ": ");
                     int input = scanner.nextInt();
                     // Adding the value to array index x
                     array[x] = input;
@@ -152,6 +152,9 @@ public class SearchSortAlgorithm {
         int mid = 0;
         int left = 0;
         int right = arraySize - 1;
+        //sorting the input array
+        QuickSort(array, 0, arraySize - 1);
+        Arrays.toString(array);
 
         while (right >= left) {
             // Half the array size and proceed to compare values on both sides
