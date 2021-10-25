@@ -70,7 +70,7 @@ public class SearchSortAlgorithm {
                 }
             } else if (type == 2) {
                 // Requesting size of the list/array from user
-                System.out.print("\nEnter your list size(number of elements in the list): ");
+                System.out.print("\nHow many elements will the array have?: ");
                 int arraySize = scanner.nextInt();
                 System.out.println();
 
